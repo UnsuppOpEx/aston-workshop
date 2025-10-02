@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Objects;
 
-public class CustomHashSet<T> implements HasSetAble {
+public class CustomHashSet<T> implements CustomSet<T> {
     private static final int CAPACITY = 16;
     private final ArrayList<LinkedList<T>> table;
     private int size;
@@ -17,7 +17,7 @@ public class CustomHashSet<T> implements HasSetAble {
     }
 
     @Override
-    public boolean add(Object e) {
+    public boolean add(T e) {
         int idx = indexFor(hash(e));
         if (table.get(idx) == null) {
             table.set(idx, new LinkedList<>());
@@ -27,19 +27,18 @@ public class CustomHashSet<T> implements HasSetAble {
                 return false;
             }
         }
-        table.get(idx).add((T) e);
+        table.get(idx).add(e);
         size++;
         return true;
     }
 
     @Override
-    public boolean remove(Object o) {
+    public void remove(T o) {
         int idx = indexFor(hash(o));
         LinkedList<T> bucket = table.get(idx);
-        if (bucket == null) return false;
+        if (bucket == null) return;
         boolean removed = bucket.remove(o);
         if (removed) size--;
-        return removed;
     }
 
     public int size() {
@@ -47,7 +46,7 @@ public class CustomHashSet<T> implements HasSetAble {
     }
 
 
-    private int hash(Object o) {
+    private int hash(T o) {
         return (o == null) ? 0 : o.hashCode();
     }
 

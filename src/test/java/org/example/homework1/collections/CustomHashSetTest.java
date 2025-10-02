@@ -29,7 +29,7 @@ class CustomHashSetTest {
 
     @Test
     void size() {
-        CustomHashSet<Long> set = new CustomHashSet<>();
+        CustomHashSet<String> set = new CustomHashSet<>();
         set.add("one");
         set.add("two");
         assertEquals(2, set.size());
