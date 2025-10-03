@@ -2,7 +2,7 @@ package org.example.homework1.collections;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CustomArrayListTest {
 
@@ -56,6 +56,6 @@ class CustomArrayListTest {
         customArrayList.add(1);
         customArrayList.add(2);
         customArrayList.add(3);
-        assertTrue(customArrayList.size() == 3);
+        assertEquals(3, customArrayList.size());
     }
 }
