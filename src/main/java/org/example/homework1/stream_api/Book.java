@@ -3,10 +3,10 @@ package org.example.homework1.stream_api;
 import java.util.Objects;
 
 public class Book {
-    private String title;
-    private String author;
-    private Integer publisherYear;
-    private Integer pageCount;
+    private final String title;
+    private final String author;
+    private final Integer publisherYear;
+    private final Integer pageCount;
 
     public Book(String title, String author, Integer publisherYear, Integer pageCount) {
         this.title = title;
@@ -15,36 +15,12 @@ public class Book {
         this.pageCount = pageCount;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
     public Integer getPublisherYear() {
         return publisherYear;
     }
 
-    public void setPublisherYear(Integer publisherYear) {
-        this.publisherYear = publisherYear;
-    }
-
     public Integer getPageCount() {
         return pageCount;
-    }
-
-    public void setPageCount(Integer pageCount) {
-        this.pageCount = pageCount;
     }
 
     @Override

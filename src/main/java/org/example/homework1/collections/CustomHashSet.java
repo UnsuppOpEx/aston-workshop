@@ -2,11 +2,12 @@ package org.example.homework1.collections;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 
-public class CustomHashSet<T> implements CustomSet<T> {
+public class CustomHashSet<E> implements CustomSet<E> {
     private static final int CAPACITY = 16;
-    private final ArrayList<LinkedList<T>> table;
+    private final ArrayList<List<E>> table;
     private int size;
 
     public CustomHashSet() {
@@ -17,12 +18,12 @@ public class CustomHashSet<T> implements CustomSet<T> {
     }
 
     @Override
-    public boolean add(T e) {
+    public boolean add(E e) {
         int idx = indexFor(hash(e));
         if (table.get(idx) == null) {
             table.set(idx, new LinkedList<>());
         }
-        for (T element : table.get(idx)) {
+        for (E element : table.get(idx)) {
             if (Objects.equals(element, e)) {
                 return false;
             }
@@ -33,9 +34,9 @@ public class CustomHashSet<T> implements CustomSet<T> {
     }
 
     @Override
-    public void remove(T o) {
+    public void remove(E o) {
         int idx = indexFor(hash(o));
-        LinkedList<T> bucket = table.get(idx);
+        List<E> bucket = table.get(idx);
         if (bucket == null) return;
         boolean removed = bucket.remove(o);
         if (removed) size--;
@@ -45,11 +46,9 @@ public class CustomHashSet<T> implements CustomSet<T> {
         return size;
     }
 
-
-    private int hash(T o) {
+    private int hash(E o) {
         return (o == null) ? 0 : o.hashCode();
     }
-
 
     private int indexFor(int hash) {
         return Math.floorMod(hash, table.size());

@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.Objects;
 
 public class Student {
-    private String name;
-    private int age;
-    private String gender;
-    private List<Book> books;
+    private final String name;
+    private final int age;
+    private final String gender;
+    private final List<Book> books;
 
     public Student(String name, int age, String gender, List<Book> books) {
         this.name = name;
@@ -20,32 +20,8 @@ public class Student {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
     public List<Book> getBooks() {
         return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
     }
 
     @Override

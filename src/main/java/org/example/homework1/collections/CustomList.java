@@ -1,14 +1,14 @@
 package org.example.homework1.collections;
 
-public interface CustomList<T> {
+public interface CustomList<E> {
 
-    void add(T element);
+    void add(E element);
 
-    T get(int index);
+    E get(int index);
 
     void remove(int index);
 
-    void addAll(CustomList<? extends T> e);
+    void addAll(CustomList<? extends E> e);
 
     int size();
 }

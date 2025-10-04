@@ -2,7 +2,7 @@ package org.example.homework1.collections;
 
 import java.util.Arrays;
 
-public class CustomArrayList<T> implements CustomList<T> {
+public class CustomArrayList<E> implements CustomList<E> {
     private final int CAPACITY = 10;
     private Object[] elements;
     private int size;
@@ -14,15 +14,15 @@ public class CustomArrayList<T> implements CustomList<T> {
     }
 
     @Override
-    public void add(T e) {
+    public void add(E e) {
         checkLengthAndUpdateCapacity();
         elements[size++] = e;
     }
 
     @Override
-    public T get(int index) {
+    public E get(int index) {
         checkIndex(index);
-        return (T) elements[index];
+        return (E) elements[index];
     }
 
     @Override
@@ -36,7 +36,7 @@ public class CustomArrayList<T> implements CustomList<T> {
     }
 
     @Override
-    public void addAll(CustomList<? extends T> c) {
+    public void addAll(CustomList<? extends E> c) {
         for (int i = 0; i < c.size(); i++) {
             add(c.get(i));
         }

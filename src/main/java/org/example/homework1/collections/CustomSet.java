@@ -1,9 +1,9 @@
 package org.example.homework1.collections;
 
-public interface CustomSet<T> {
+public interface CustomSet<E> {
 
-    boolean add(T e);
+    boolean add(E e);
 
-    void remove(T e);
+    void remove(E e);
 }
 
