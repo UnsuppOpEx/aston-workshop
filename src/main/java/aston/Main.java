@@ -1,7 +1,7 @@
-package org.example;
+package aston;
 
-import org.example.homework1.stream_api.Book;
-import org.example.homework1.stream_api.Student;
+import aston.task1.stream_api.Book;
+import aston.task1.stream_api.Student;
 
 import java.util.ArrayList;
 import java.util.Comparator;

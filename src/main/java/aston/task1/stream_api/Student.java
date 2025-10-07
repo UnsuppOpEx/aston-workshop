@@ -1,4 +1,4 @@
-package org.example.homework1.stream_api;
+package aston.task1.stream_api;
 
 import java.util.List;
 import java.util.Objects;

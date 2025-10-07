@@ -1,4 +1,4 @@
-package org.example.homework1.collections;
+package aston.task1.collections;
 
 import java.util.Arrays;
 
