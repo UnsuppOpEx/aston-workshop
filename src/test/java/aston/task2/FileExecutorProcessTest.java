@@ -1,5 +1,6 @@
 package aston.task2;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,14 +14,44 @@ class FileExecutorProcessTest {
 
 
     @BeforeEach
-    void init() throws IOException {
+    void init() {
         writeHandler = new FileWriteHandler();
         readHandler = new FileRiderHandler();
-        Path tempFile = Files.createTempFile("test", ".txt");
     }
 
     @Test
     void writeExecuteProcess() throws IOException {
+        Path tempFile = Files.createTempFile("test", ".txt");
+        String expectedText = "Hello World!";
 
+        writeHandler.executionProcess(tempFile, expectedText);
+        String actualResult = Files.readString(tempFile);
+
+        Assertions.assertEquals(expectedText, actualResult);
+
+        Files.deleteIfExists(tempFile);
+    }
+
+    @Test
+    void readExecuteProcess() throws IOException {
+        String expectedText = "Hello World!";
+        Path tempFile = Files.createTempFile("test", ".txt");
+        Files.writeString(tempFile, expectedText);
+
+        String actualResult = readHandler.executionProcess(tempFile, null);
+
+        Assertions.assertEquals(expectedText, actualResult);
+
+        Files.deleteIfExists(tempFile);
+    }
+
+    @Test
+    void readExecuteProcessWithException() {
+        Path invalidFilePath = Path.of("/root/text.txt");
+
+        FileExecutorProcessException exception = Assertions.assertThrows(FileExecutorProcessException.class,
+                () -> readHandler.executionProcess(invalidFilePath, null));
+
+        Assertions.assertTrue(exception.getMessage().contains("Error reading file: " + invalidFilePath));
     }
 }
