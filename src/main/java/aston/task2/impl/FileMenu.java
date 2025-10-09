@@ -22,7 +22,7 @@ public class FileMenu {
                     System.out.println("Select the following menu to read from a file :)");
                     break;
                 case 2:
-                    handleRead();
+                    handlerRead();
                     break;
                 case 3:
                     scanner.close();
@@ -59,7 +59,7 @@ public class FileMenu {
         }
     }
 
-    private void handleRead() {
+    private void handlerRead() {
         try {
             String content = processor.executeProcess(FileOperationType.READ, null);
             System.out.println("File content: " + content);
