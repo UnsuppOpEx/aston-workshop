@@ -43,7 +43,7 @@ public class FileMenu {
 
     private void validationAction(Integer number) {
         if (number < 0 || number >= 4) {
-            System.err.println("Не существует такого пункта!!!");
+            System.err.println("Menu not found!!!");
             scanner.close();
         }
     }

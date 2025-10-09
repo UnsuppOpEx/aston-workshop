@@ -14,9 +14,7 @@ public class FileExecutorProcess {
 
     public String executeProcess(FileOperationType fileOperationType, String text) throws FileExecutorProcessException {
         Path filePath = getFilePath();
-
         FileOperationHandler handler = typeToHandlerMap.get(fileOperationType);
-
         return handler.executionProcess(filePath, text);
     }
 
