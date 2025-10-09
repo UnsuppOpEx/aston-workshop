@@ -1,4 +1,4 @@
-package aston.task2;
+package aston.task2.service;
 
 import java.nio.file.Path;
 import java.util.HashMap;
@@ -25,6 +25,6 @@ public class FileExecutorProcess {
         if (filePath == null || filePath.isEmpty()) {
             throw new FileExecutorProcessException("Environment variable FILE_PATH is required");
         }
-        return Path.of(System.getenv("FILE_PATH"));
+        return Path.of(filePath);
     }
 }

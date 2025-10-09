@@ -1,4 +1,4 @@
-package aston.task2;
+package aston.task2.service;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
