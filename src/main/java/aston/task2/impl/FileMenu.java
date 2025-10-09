@@ -19,6 +19,7 @@ public class FileMenu {
             switch (menuNumber) {
                 case 1:
                     handlerWrite();
+                    System.out.println("Select the following menu to read from a file :)");
                     break;
                 case 2:
                     handleRead();
