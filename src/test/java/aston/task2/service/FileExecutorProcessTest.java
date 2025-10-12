@@ -3,7 +3,6 @@ package aston.task2.service;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,7 +19,7 @@ class FileExecutorProcessTest {
     }
 
     @Test
-    void writeExecuteProcess() throws IOException {
+    void whenWriteExecuteProcess_thenTempFileContainsText() throws IOException {
         Path tempFile = Files.createTempFile("test", ".txt");
         String expectedText = "Hello World!";
 
@@ -33,7 +32,7 @@ class FileExecutorProcessTest {
     }
 
     @Test
-    void readExecuteProcess() throws IOException {
+    void whenReadExecuteProcess_thenResultContainsText() throws IOException {
         String expectedText = "Hello World!";
         Path tempFile = Files.createTempFile("test", ".txt");
         Files.writeString(tempFile, expectedText);
@@ -46,7 +45,7 @@ class FileExecutorProcessTest {
     }
 
     @Test
-    void readExecuteProcessWithException() {
+    void whenReadExecuteProcessWithInvalidPath_thenThrowException() {
         Path invalidFilePath = Path.of("/root/text.txt");
 
         FileExecutorProcessException exception = Assertions.assertThrows(FileExecutorProcessException.class,
