@@ -6,13 +6,12 @@ import aston.task2.service.FileOperationType;
 
 import java.util.Scanner;
 
-public class UserWriteHandler implements UserChoiceHandler{
+public class UserWriteHandler implements UserChoiceHandler {
     private final FileExecutorProcess fileExecutorProcess;
 
     public UserWriteHandler(FileExecutorProcess fileExecutorProcess) {
         this.fileExecutorProcess = fileExecutorProcess;
     }
-
 
     @Override
     public void execute(Scanner scanner) {
