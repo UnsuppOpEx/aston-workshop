@@ -13,8 +13,8 @@ public class FileMenu {
         FileExecutorProcess processor = new FileExecutorProcess();
         choiceHandlerMap = Map.of(
                 UserChoice.WRITE, new UserWriteHandler(processor),
-                UserChoice.READ, new UserWriteHandler(processor),
-                UserChoice.EXIT, new UserWriteHandler(processor));
+                UserChoice.READ, new UserRiderHandler(processor),
+                UserChoice.EXIT, new UserExitHandler(processor));
     }
 
     public void doAction() {
