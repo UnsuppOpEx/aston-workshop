@@ -10,8 +10,8 @@ public class DiscountStrategyImpl {
         discountStrategyMap.put(name, discountStrategy);
     }
 
-    public double execute(String name, double discount) {
+    public double execute(String name, double amount) {
         DiscountStrategy strategy = discountStrategyMap.getOrDefault(name, new NoDiscountStrategy());
-        return strategy.applyDiscount(discount);
+        return strategy.applyDiscount(amount);
     }
 }
