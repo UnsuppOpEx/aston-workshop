@@ -1,10 +1,16 @@
 package aston.task3.strategy;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class DiscountStrategyImplTest {
-    private final DiscountStrategyImpl strategy = new DiscountStrategyImpl();
+    private DiscountStrategyImpl strategy;
+
+    @BeforeEach
+    public void setUp() {
+        strategy = new DiscountStrategyImpl();
+    }
 
     @Test
     void whenExecuteDiscountStrategy_thenResultContainsAmountWithDiscount() {
