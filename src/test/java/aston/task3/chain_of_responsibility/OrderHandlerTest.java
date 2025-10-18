@@ -11,11 +11,11 @@ class OrderHandlerTest {
     void setUp() {
         stock = new StockHandler();
         payment = new PaymentHandler();
+        stock.setNext(payment);
     }
 
     @Test
-    void handle() {
-        stock.setNext(payment);
+    void whenHandlerWasCalled_thenResultContainsTextWithExecuteChain() {
         stock.handle(new Order("TV", 1, 500));
     }
 }

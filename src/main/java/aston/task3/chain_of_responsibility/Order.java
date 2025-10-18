@@ -1,10 +1,12 @@
 package aston.task3.chain_of_responsibility;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
-@Builder
 @Getter
+@Setter
+@AllArgsConstructor
 public class Order {
     private String productName;
     private int amount;
