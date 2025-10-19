@@ -6,12 +6,10 @@ import org.mockito.Mockito;
 
 class PrinterAdapterTest {
     private PrinterAdapter adapter;
-    private LegacyPrinter legacyPrinter;
-
 
     @BeforeEach
     void setUp() {
-        legacyPrinter = Mockito.mock(LegacyPrinter.class);
+        LegacyPrinter legacyPrinter = Mockito.mock(LegacyPrinter.class);
         adapter = Mockito.spy(new PrinterAdapter(legacyPrinter));
     }
 
