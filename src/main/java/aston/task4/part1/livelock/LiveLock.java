@@ -1,7 +1,7 @@
 package aston.task4.part1.livelock;
 
 public class LiveLock {
-    static class Worker {
+   public static class Worker {
         private volatile boolean active;
 
         public Worker(boolean active) {
